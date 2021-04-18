@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+
+
+{% block container %}
+    <h1>Updated Inventory</h1>
+    <table class="table table-hover table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Serial</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for inventory in inventory_list %}
+            <tr>
+                <th scope="row">{{ inventory.serial_number }}</th>
+                <td>{{ inventory.quantity }}</td>
+                <td>{{ inventory.price }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
